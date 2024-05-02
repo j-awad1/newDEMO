@@ -1,0 +1,118 @@
+
+
+[{"type":"text","text":"list Xpaths for data point base LTV Ratio Percent in MISMO"}]
+In the Mortgage Industry Standards Maintenance Organization (MISMO) data model, the XPath for the "Base LTV Ratio Percent" data point can be found under the "LoanProduct" and "LoanPurpose" containers. Here are the possible XPaths:
+
+1. For a Purchase Loan:
+```
+Loan/LoanPurpose/Purchase/LoanToValueRatios/BaseLoanToValueRatio
+```
+
+2. For a Refinance Loan:
+```
+Loan/LoanPurpose/Refinance/LoanToValueRatios/BaseLoanToValueRatio
+```
+
+3. For a Construction Loan:
+```
+Loan/LoanPurpose/Construction/LoanToValueRatios/BaseLoanToValueRatio
+```
+
+4. For a Home Equity Loan:
+```
+Loan/LoanPurpose/HomeEquity/LoanToValueRatios/BaseLoanToValueRatio
+```
+
+5. For a Reverse Mortgage:
+```
+Loan/LoanPurpose/ReverseMortgage/LoanToValueRatios/BaseLoanToValueRatio
+```
+
+The "BaseLoanToValueRatio" element represents the Base LTV Ratio Percent data point and is typically expressed as a percentage value.
+
+Please note that the specific XPath may vary depending on the version of the MISMO data model being used and the context in which the data point is being referenced.
+[{"type":"text","text":"list Xpaths for data point base LTV Ratio Percent in MISMO"}]
+In the Mortgage Industry Standards Maintenance Organization (MISMO) data model, the XPath for the "Base LTV Ratio Percent" data point can be found under the "LoanProduct" and "LoanPurpose" containers. Here are the possible XPaths:
+
+1. For a Purchase Loan:
+```
+Loan/LoanPurpose/Purchase/LoanToValueRatios/BaseLoanToValueRatio
+```
+
+2. For a Refinance Loan:
+```
+Loan/LoanPurpose/Refinance/LoanToValueRatios/BaseLoanToValueRatio
+```
+
+3. For a Construction Loan:
+```
+Loan/LoanPurpose/Construction/LoanToValueRatios/BaseLoanToValueRatio
+```
+
+4. For a Home Equity Loan:
+```
+Loan/LoanPurpose/HomeEquity/LoanToValueRatios/BaseLoanToValueRatio
+```
+
+5. For a Reverse Mortgage:
+```
+Loan/LoanPurpose/ReverseMortgage/LoanToValueRatios/BaseLoanToValueRatio
+```
+
+The "BaseLoanToValueRatio" element represents the Base LTV Ratio Percent data point and is typically expressed as a percentage value.
+
+Please note that the specific XPath may vary depending on the version of the MISMO data model being used and the context in which the data point is being referenced.
+[{"type":"text","text":"list Xpaths for data point base LTV Ratio Percent in MISMO v3.6"}]
+In the MISMO Version 3.6 data model, the XPath for the "Base LTV Ratio Percent" data point can be found under the "LoanProduct" and "LoanPurpose" containers. Here are the possible XPaths:
+
+1. For a Purchase Loan:
+```
+Loan/Loan/LoanPurpose/Purchase/LoanToValueRatios/BaseLoanToValueRatio
+```
+
+2. For a Refinance Loan:
+```
+Loan/Loan/LoanPurpose/Refinance/LoanToValueRatios/BaseLoanToValueRatio
+```
+
+3. For a Construction Loan:
+```
+Loan/Loan/LoanPurpose/Construction/LoanToValueRatios/BaseLoanToValueRatio
+```
+
+4. For a Home Equity Loan:
+```
+Loan/Loan/LoanPurpose/HomeEquity/LoanToValueRatios/BaseLoanToValueRatio
+```
+
+5. For a Reverse Mortgage:
+```
+Loan/Loan/LoanPurpose/ReverseMortgage/LoanToValueRatios/BaseLoanToValueRatio
+```
+
+In MISMO Version 3.6, the "BaseLoanToValueRatio" element is located under the "LoanToValueRatios" container, which is nested within the specific "LoanPurpose" container (e.g., Purchase, Refinance, Construction, HomeEquity, or ReverseMortgage).
+
+Please note that the XPath may vary slightly depending on the specific context and structure of the XML document based on the MISMO Version 3.6 data model.
+[{"type":"text","text":"which FIBO classes, properties can identify MISMO data point base LTV Ratio Percent "}]
+In the Financial Industry Business Ontology (FIBO), the "Base LTV Ratio Percent" data point from the MISMO data model can be represented using the following classes and properties:
+
+Classes:
+1. `fibo-loan-typ:LoanToValueRatio`: This class represents the loan-to-value ratio, which is a measure of the loan amount relative to the value of the underlying asset.
+
+Properties:
+1. `fibo-loan-typ:hasBaseLoanToValueRatio`: This property can be used to associate a loan with its base loan-to-value ratio.
+2. `fibo-loan-typ:baseLoanToValueRatio`: This data property can be used to represent the actual value of the base loan-to-value ratio, typically expressed as a percentage.
+
+To represent the "Base LTV Ratio Percent" data point in FIBO, you can use the following structure:
+
+```
+:myLoan a fibo-loan-typ:Loan ;
+fibo-loan-typ:hasBaseLoanToValueRatio :baseLTVRatio .
+
+:baseLTVRatio a fibo-loan-typ:LoanToValueRatio ;
+fibo-loan-typ:baseLoanToValueRatio "80.0"^^xsd:decimal .
+```
+
+In this example, `:myLoan` is an instance of the `fibo-loan-typ:Loan` class, and it is associated with an instance of the `fibo-loan-typ:LoanToValueRatio` class (`:baseLTVRatio`) using the `fibo-loan-typ:hasBaseLoanToValueRatio` property. The actual value of the base loan-to-value ratio (e.g., 80.0%) is represented using the `fibo-loan-typ:baseLoanToValueRatio` data property.
+
+Please note that the specific implementation and naming conventions may vary depending on the context and requirements of your application.
