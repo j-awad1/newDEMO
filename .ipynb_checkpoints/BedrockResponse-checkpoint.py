@@ -38,7 +38,7 @@ class BedrockProcessing():
         response['knowledgeBaseSummaries']
         # knowledgeBaseId = response['knowledgeBaseSummaries'][0]['knowledgeBaseId']
         # print('kbid ', knowledgeBaseId)
-        knowledgeBaseId ='S1JUFZRM7F'
+        knowledgeBaseId ='CBVQEYGCRE'
 
         return knowledgeBaseId
     

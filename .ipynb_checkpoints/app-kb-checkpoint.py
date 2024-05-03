@@ -10,13 +10,13 @@ st.set_page_config(
     layout="wide"
 )
 model_name = "Claude3-sonnet"
-col1, gap, col3 = st.columns([50, 1, 30])
+col1, gap, col3 = st.columns([40, 1, 30])
 
     # Static component
 with col1:
 
     # Build the icon + title
-    c1, mid, c2 = st.columns([2, 3, 40])
+    c1, mid, c2 = st.columns([1, 1, 30])
     with c1:
         st.image("images.png", width = 50)
     with c2:
@@ -27,8 +27,8 @@ with col1:
 
     add_vertical_space(2)
 
-    col1.header("Data Dictionary")
-    tab1, tab2, tab3 = st.tabs(["Parameters", "Columns", "Profile"])
+    col1.header("Data Architecture")
+    tab1, tab2 = st.tabs(["Parameters", "Columns"])
 
     tab1.subheader("Tune Parameters")
     max_gen_len = tab1.slider("Maximum Length Generation:", min_value=0, max_value=4096, value=(2048))
@@ -89,7 +89,7 @@ with col1:
 # Chatbot Component
 with col3:
     col3.header("AI Chatbot")
-    st.image("chatbot_image.jpeg", width=70)
+    col3.image("chatbot_image.jpeg", width = 70)
     overall_container = st.container(border=True)
     with overall_container:
 
@@ -98,17 +98,22 @@ with col3:
 
         # container for user text
         container = st.container()
-
+        
+            
         with container:
             with st.form(key='my_form', clear_on_submit=True):
-                prompt = st.text_input("Please enter your query:", max_chars=2000)  
+                prompt = st.text_input("Please enter your query:", max_chars=2000)
+                with response_container:
+                    if prompt:
+                        st.text(f"Q: {prompt}")
                 # user_input = st.text_input("Query:", placeholder="Ask questions here", key='input')
                 submit_button = st.form_submit_button(label="Submit", type="primary")
                 end_session_button = st.form_submit_button("End Session")
                 
-                # submit_button = st.button("Submit", type="primary")
-                
 
+                # submit_button = st.button("Submit", type="primary")
+        
+    
             # if submit_button and user_input:
             #     output = conversational_chat(user_input)
 
@@ -172,8 +177,8 @@ prompt = prompt.strip()
 if 'history' not in st.session_state:
     st.session_state['history'] = []
 
-    
-    
+
+
 # Handling user input and responses
 if submit_button and prompt:
     event = {
@@ -183,7 +188,7 @@ if submit_button and prompt:
 
     print(event)
     #llama_response, location = br.get_response_from_becrock_model_llama2(prompt)
-    
+
     bedrock_response =br.get_bedrock_model_response(prompt, model_name)
     print(f"bedrock_response type ={type(bedrock_response)}")
     print(f"response keys = {bedrock_response.keys()}")
@@ -196,7 +201,7 @@ if submit_button and prompt:
     st.session_state['history'].append({"question": prompt, "answer": response, "model":model_name, "refrences":','.join(location)})
     st.session_state['trace_data'] = response
 
-    
+
 if end_session_button:
     st.session_state['history'].append({"question": "Session Ended", "answer": "Thank you for using Enterprise Architect Agent!"})
     event = {
@@ -207,17 +212,18 @@ if end_session_button:
     #agenthelper.lambda_handler(event, None)
     st.session_state['history'].clear()
 
+with response_container:
+    for chat in reversed(st.session_state['history']):
 
+        # Creating columns for Question
+        print (f"chat keys = {chat.keys()}")
+        # st.text(f"Q: {chat['question']}")
+        st.text_area(f"{chat['model']}:", value=chat["answer"], height=100, key=str(chat)+"a")
 # Display conversation history
-st.write("## Conversation History")
-
+st.write("## References")
 
 for chat in reversed(st.session_state['history']):
-    
-    # Creating columns for Question
-    print (f"chat keys = {chat.keys()}")
-    st.text_area("Q:", value=chat["question"], height=50, key=str(chat)+"q", disabled=True)
-    st.text_area(f"{chat['model']}:", value=chat["answer"], height=100, key=str(chat)+"a")
+
     st.text_area("References:", value=chat["refrences"], height=20,key=str(chat)+"r", disabled=True)
 
 

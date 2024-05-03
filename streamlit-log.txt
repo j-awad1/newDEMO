@@ -4,6 +4,200 @@ Collecting usage statistics. To deactivate, set browser.gatherUsageStats to fals
 
   You can now view your Streamlit app in your browser.
 
-  Network URL: http://169.255.255.2:8509
-  External URL: http://54.167.126.47:8509
+  Network URL: http://169.255.255.2:8503
+  External URL: http://35.170.135.114:8503
 
+2024-05-03 12:57:05.610 Uncaught app exception
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/state/session_state.py", line 411, in __getitem__
+    return self._getitem(widget_id, key)
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/state/session_state.py", line 456, in _getitem
+    raise KeyError
+KeyError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/scriptrunner/script_runner.py", line 600, in _run_script
+    exec(code, module.__dict__)
+  File "/home/sagemaker-user/newDEMO/app-kb.py", line 110, in <module>
+    if st.session_state['generated']:
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/state/session_state_proxy.py", line 90, in __getitem__
+    return get_session_state()[key]
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/state/safe_session_state.py", line 93, in __getitem__
+    return self._state[key]
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/state/session_state.py", line 413, in __getitem__
+    raise KeyError(_missing_key_error_message(key))
+KeyError: 'st.session_state has no key "generated". Did you forget to initialize it? More info: https://docs.streamlit.io/library/advanced-features/session-state#initialization'
+2024-05-03 13:03:03.793 Uncaught app exception
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/state/session_state.py", line 411, in __getitem__
+    return self._getitem(widget_id, key)
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/state/session_state.py", line 456, in _getitem
+    raise KeyError
+KeyError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/scriptrunner/script_runner.py", line 600, in _run_script
+    exec(code, module.__dict__)
+  File "/home/sagemaker-user/newDEMO/app-kb.py", line 102, in <module>
+    for chat in reversed(st.session_state['history']):
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/state/session_state_proxy.py", line 90, in __getitem__
+    return get_session_state()[key]
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/state/safe_session_state.py", line 93, in __getitem__
+    return self._state[key]
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/state/session_state.py", line 413, in __getitem__
+    raise KeyError(_missing_key_error_message(key))
+KeyError: 'st.session_state has no key "history". Did you forget to initialize it? More info: https://docs.streamlit.io/library/advanced-features/session-state#initialization'
+2024-05-03 13:15:14.188 Uncaught app exception
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/state/session_state.py", line 411, in __getitem__
+    return self._getitem(widget_id, key)
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/state/session_state.py", line 456, in _getitem
+    raise KeyError
+KeyError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/scriptrunner/script_runner.py", line 600, in _run_script
+    exec(code, module.__dict__)
+  File "/home/sagemaker-user/newDEMO/app-kb.py", line 102, in <module>
+    for chat in reversed(st.session_state['history']):
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/state/session_state_proxy.py", line 90, in __getitem__
+    return get_session_state()[key]
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/state/safe_session_state.py", line 93, in __getitem__
+    return self._state[key]
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/state/session_state.py", line 413, in __getitem__
+    raise KeyError(_missing_key_error_message(key))
+KeyError: 'st.session_state has no key "history". Did you forget to initialize it? More info: https://docs.streamlit.io/library/advanced-features/session-state#initialization'
+2024-05-03 13:15:40.951 Uncaught app exception
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/state/session_state.py", line 411, in __getitem__
+    return self._getitem(widget_id, key)
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/state/session_state.py", line 456, in _getitem
+    raise KeyError
+KeyError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/scriptrunner/script_runner.py", line 600, in _run_script
+    exec(code, module.__dict__)
+  File "/home/sagemaker-user/newDEMO/app-kb.py", line 102, in <module>
+    for chat in reversed(st.session_state['history']):
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/state/session_state_proxy.py", line 90, in __getitem__
+    return get_session_state()[key]
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/state/safe_session_state.py", line 93, in __getitem__
+    return self._state[key]
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/state/session_state.py", line 413, in __getitem__
+    raise KeyError(_missing_key_error_message(key))
+KeyError: 'st.session_state has no key "history". Did you forget to initialize it? More info: https://docs.streamlit.io/library/advanced-features/session-state#initialization'
+2024-05-03 13:19:41.058 Uncaught app exception
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/state/session_state.py", line 411, in __getitem__
+    return self._getitem(widget_id, key)
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/state/session_state.py", line 456, in _getitem
+    raise KeyError
+KeyError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/scriptrunner/script_runner.py", line 600, in _run_script
+    exec(code, module.__dict__)
+  File "/home/sagemaker-user/newDEMO/app-kb.py", line 104, in <module>
+    for chat in reversed(st.session_state['history']):
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/state/session_state_proxy.py", line 90, in __getitem__
+    return get_session_state()[key]
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/state/safe_session_state.py", line 93, in __getitem__
+    return self._state[key]
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/state/session_state.py", line 413, in __getitem__
+    raise KeyError(_missing_key_error_message(key))
+KeyError: 'st.session_state has no key "history". Did you forget to initialize it? More info: https://docs.streamlit.io/library/advanced-features/session-state#initialization'
+2024-05-03 13:19:50.303 Uncaught app exception
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/state/session_state.py", line 411, in __getitem__
+    return self._getitem(widget_id, key)
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/state/session_state.py", line 456, in _getitem
+    raise KeyError
+KeyError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/scriptrunner/script_runner.py", line 600, in _run_script
+    exec(code, module.__dict__)
+  File "/home/sagemaker-user/newDEMO/app-kb.py", line 104, in <module>
+    for chat in reversed(st.session_state['history']):
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/state/session_state_proxy.py", line 90, in __getitem__
+    return get_session_state()[key]
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/state/safe_session_state.py", line 93, in __getitem__
+    return self._state[key]
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/state/session_state.py", line 413, in __getitem__
+    raise KeyError(_missing_key_error_message(key))
+KeyError: 'st.session_state has no key "history". Did you forget to initialize it? More info: https://docs.streamlit.io/library/advanced-features/session-state#initialization'
+2024-05-03 13:20:47.556 Uncaught app exception
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/state/session_state.py", line 411, in __getitem__
+    return self._getitem(widget_id, key)
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/state/session_state.py", line 456, in _getitem
+    raise KeyError
+KeyError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/scriptrunner/script_runner.py", line 600, in _run_script
+    exec(code, module.__dict__)
+  File "/home/sagemaker-user/newDEMO/app-kb.py", line 104, in <module>
+    for chat in reversed(st.session_state['history']):
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/state/session_state_proxy.py", line 90, in __getitem__
+    return get_session_state()[key]
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/state/safe_session_state.py", line 93, in __getitem__
+    return self._state[key]
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/state/session_state.py", line 413, in __getitem__
+    raise KeyError(_missing_key_error_message(key))
+KeyError: 'st.session_state has no key "history". Did you forget to initialize it? More info: https://docs.streamlit.io/library/advanced-features/session-state#initialization'
+2024-05-03 13:25:59.629 Uncaught app exception
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/state/session_state.py", line 411, in __getitem__
+    return self._getitem(widget_id, key)
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/state/session_state.py", line 456, in _getitem
+    raise KeyError
+KeyError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/scriptrunner/script_runner.py", line 600, in _run_script
+    exec(code, module.__dict__)
+  File "/home/sagemaker-user/newDEMO/app-kb.py", line 102, in <module>
+    for chat in reversed(st.session_state['history']):
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/state/session_state_proxy.py", line 90, in __getitem__
+    return get_session_state()[key]
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/state/safe_session_state.py", line 93, in __getitem__
+    return self._state[key]
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/state/session_state.py", line 413, in __getitem__
+    raise KeyError(_missing_key_error_message(key))
+KeyError: 'st.session_state has no key "history". Did you forget to initialize it? More info: https://docs.streamlit.io/library/advanced-features/session-state#initialization'
+2024-05-03 13:33:28.875 Uncaught app exception
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/scriptrunner/script_runner.py", line 600, in _run_script
+    exec(code, module.__dict__)
+  File "/home/sagemaker-user/newDEMO/app-kb.py", line 217, in <module>
+    st.text("Q:", value=chat["question"])
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/metrics_util.py", line 397, in wrapped_func
+    result = non_optional_func(*args, **kwargs)
+TypeError: text() got an unexpected keyword argument 'value'
+2024-05-03 13:33:58.766 Uncaught app exception
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/scriptrunner/script_runner.py", line 600, in _run_script
+    exec(code, module.__dict__)
+  File "/home/sagemaker-user/newDEMO/app-kb.py", line 217, in <module>
+    st.text("Q:", chat["question"])
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/metrics_util.py", line 397, in wrapped_func
+    result = non_optional_func(*args, **kwargs)
+TypeError: text() takes 2 positional arguments but 3 were given
