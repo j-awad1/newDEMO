@@ -4,7 +4,9 @@ import pandas as pd  # to create a dataframe for displaying all models from Bedr
 from streamlit_extras.add_vertical_space import add_vertical_space
 from streamlit_extras.app_logo import add_logo
 from BedrockResponse import BedrockProcessing
+# from sparqlExecute import sparqlExecution
 br=BedrockProcessing()
+# sarql=sparqlExecution()
 
 st.set_page_config(
     layout="wide"
@@ -18,7 +20,7 @@ with col1:
     # Build the icon + title
     c1, mid, c2 = st.columns([1, 1, 30])
     with c1:
-        st.image("images.png", width = 50)
+        st.image("images.png", width = 60)
     with c2:
         st.title("Enterprise Metadata Evolution")
 
@@ -27,8 +29,8 @@ with col1:
 
     add_vertical_space(2)
 
-    col1.header("Data Architecture")
-    tab1, tab2 = st.tabs(["Parameters", "Columns"])
+    col1.header("Semantic ")
+    tab1, tab2 = st.tabs(["Parameters", "Dataset"])
 
     tab1.subheader("Tune Parameters")
     max_gen_len = tab1.slider("Maximum Length Generation:", min_value=0, max_value=4096, value=(2048))
@@ -53,7 +55,6 @@ with col1:
 
 #     selected_tables = table.loc[table['show'] == True]
 
-#     tab2.subheader("Column Summary")
 #     df2 = pd.read_csv("data/attribute_metadata.csv")
 #     df2 = df2[['Physical Attribute Name', 'Logical Attribute Name', 'Description', 'Dataset Reg ID', 'DataType']]
 
@@ -88,8 +89,13 @@ with col1:
 
 # Chatbot Component
 with col3:
-    col3.header("AI Chatbot")
-    col3.image("chatbot_image.jpeg", width = 70)
+    c3, c4 = st.columns([10, 30])
+    with c3:
+        st.header("AI Chatbot")
+    with c4:
+        st.image("chatbot_image.jpeg", width = 110)
+    
+    
     overall_container = st.container(border=True)
     with overall_container:
 
@@ -103,9 +109,7 @@ with col3:
         with container:
             with st.form(key='my_form', clear_on_submit=True):
                 prompt = st.text_input("Please enter your query:", max_chars=2000)
-                with response_container:
-                    if prompt:
-                        st.text(f"Q: {prompt}")
+
                 # user_input = st.text_input("Query:", placeholder="Ask questions here", key='input')
                 submit_button = st.form_submit_button(label="Submit", type="primary")
                 end_session_button = st.form_submit_button("End Session")
@@ -217,14 +221,21 @@ with response_container:
 
         # Creating columns for Question
         print (f"chat keys = {chat.keys()}")
-        # st.text(f"Q: {chat['question']}")
-        st.text_area(f"{chat['model']}:", value=chat["answer"], height=100, key=str(chat)+"a")
+        st.text_area(f"Q:", value =  chat["question"])
+        st.text_area("Claude 3 Sonnet:", value=chat["answer"], height=100, key=str(chat)+"a")
 # Display conversation history
 st.write("## References")
 
+temp = None
 for chat in reversed(st.session_state['history']):
 
-    st.text_area("References:", value=chat["refrences"], height=20,key=str(chat)+"r", disabled=True)
+    
+    if chat["refrences"] == temp:
+        continue
+    else:
+        st.text_area("References:", value=chat["refrences"], height=15,key=str(chat)+"r", disabled=True)
+        temp = chat["refrences"]
+    # chat["refrences"].clear()
 
 
 
