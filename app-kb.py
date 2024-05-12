@@ -12,7 +12,7 @@ st.set_page_config(
     layout="wide"
 )
 model_name = "Claude3-sonnet"
-col1, gap, col3 = st.columns([40, 1, 30])
+col1, col3 = st.columns([40, 30])
 
     # Static component
 with col1:
@@ -30,15 +30,17 @@ with col1:
     add_vertical_space(2)
 
     col1.header("Semantic ")
-    tab1, tab2 = st.tabs(["Parameters", "Dataset"])
+    tab1, tab2 = st.tabs(["Visual Ontology", "Parameters"])
 
-    tab1.subheader("Tune Parameters")
-    max_gen_len = tab1.slider("Maximum Length Generation:", min_value=0, max_value=4096, value=(2048))
-    temperature = tab1.slider("Temperature:", min_value=0.0, max_value=1.0, value=(0.3))
-    top_p = tab1.slider("Top_p:", min_value=0.0, max_value=1.0, value=(0.5))
+    tab1.image("MISMOSubset.jpg", width = 950)
+    
+    tab2.subheader("Tune Parameters")
+    max_gen_len = tab2.slider("Maximum Length Generation:", min_value=0, max_value=4096, value=(2048))
+    temperature = tab2.slider("Temperature:", min_value=0.0, max_value=1.0, value=(0.3))
+    top_p = tab2.slider("Top_p:", min_value=0.0, max_value=1.0, value=(0.5))
 #     df = pd.read_csv("data/dataset_metadata.csv")
 #     # df = df[['Dataset Name', 'Table Name', 'Dataset Reg ID', 'Dataset Description']]
-#     df["show"] = False
+#     df["show"] = FalseF
 
 #     table = tab1.data_editor(
 #         df,
@@ -222,7 +224,7 @@ with response_container:
         # Creating columns for Question
         print (f"chat keys = {chat.keys()}")
         st.text_area(f"Q:", value =  chat["question"])
-        st.text_area("Claude 3 Sonnet:", value=chat["answer"], height=100, key=str(chat)+"a")
+        st.text_area("Claude 3 Sonnet:", value=chat["answer"], height=150, key=str(chat)+"a")
 # Display conversation history
 st.write("## References")
 
@@ -235,7 +237,6 @@ for chat in reversed(st.session_state['history']):
     else:
         st.text_area("References:", value=chat["refrences"], height=15,key=str(chat)+"r", disabled=True)
         temp = chat["refrences"]
-    # chat["refrences"].clear()
 
 
 
