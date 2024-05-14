@@ -38,7 +38,7 @@ class BedrockProcessing():
         response['knowledgeBaseSummaries']
         # knowledgeBaseId = response['knowledgeBaseSummaries'][0]['knowledgeBaseId']
         # print('kbid ', knowledgeBaseId)
-        knowledgeBaseId ='5YNN8CLAS8'
+        knowledgeBaseId ='5SU5QIYQEN' #5SU5QIYQEN flood - no flood:5YNN8CLAS8
 
         return knowledgeBaseId
     
@@ -51,6 +51,8 @@ class BedrockProcessing():
             knowledge_text = result['content']['text']
         return(knowledge_text)
  
+    
+    
     def get_response_from_bedrock_model_llama2(self, prompt):
         max_gen_len = 128
         temperature = 0.1
@@ -77,13 +79,12 @@ class BedrockProcessing():
 
     def get_response_from_bedrock_model_claude3(self,prompt):
         model_id= "anthropic.claude-3-sonnet-20240229-v1:0"
-        # model_id="anthropic.claude-3-sonnet-20240229-v1:0"
         body=json.dumps(
                     {
                         "anthropic_version": "bedrock-2023-05-31",
                         "max_tokens": 4096,
                         "temperature": 0.3,
-                        "top_p": 0.9,
+                        "top_p": 0.8,
                         "messages": [
                             {
                                 "role": "user",
@@ -104,14 +105,37 @@ class BedrockProcessing():
         #print(type(references))
         return(response_body.get("content")[0]['text'])
      
-    
+    def get_response_from_bedrock_model_mistral(self, prompt):
+        model_id='mistral.mistral-7b-instruct-v0:2'
+        accept = 'application/json'
+        content_type = 'application/json'
+        
+        # Create request body.
+        body = json.dumps({
+            "prompt": prompt,
+            "max_tokens": 2048,
+            "temperature": 0.3,
+            "top_p": 0.8
+        })
+        
+        
+        response = self.bedrock_runtime.invoke_model(
+                                                            body=body, #tab'bytes'|file,
+                                                            contentType=content_type,
+                                                            accept=accept,
+                                                            modelId= model_id
+                                                        )
+        response_body = json.loads(response.get('body').read())
+        #print(response_body)
+        #print(type(references))
+        return(response_body.get("outputs")[0]['text'])
     
     def get_response_from_bedrock_model_claude21(self,prompt):
         model_id= "anthropic.claude-v2:1"
     
         body = json.dumps({
                                     "prompt": f"""\n\nHuman: {prompt}"\n\nAssistant:""",
-                                    "max_tokens_to_sample": 4096,
+                                    "max_tokens_to_sample": max_tokens,
                                     "temperature": 0.1,
                                     "top_p": 0.9,
                                     
@@ -145,8 +169,8 @@ class BedrockProcessing():
             print(f"response from claude3 model!!!")
             response = self.get_response_from_bedrock_model_claude3(prompt)
         else:
-            print(f"response from claude2 model!!!")
-            response = self.get_response_from_bedrock_model_claude21(prompt)
+            print(f"response from claude3 model!!!")
+            response = self.get_response_from_bedrock_model_claude3(prompt)
         response = {"response": response, 'location': references}
         return response
         

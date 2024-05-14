@@ -3,3 +3,6 @@ Q: Using MISMO ontology, what is UPB? What properties use UPB?
 Q: What are the flood zone risk factors from MISMO ontology? Does flood zone risk factor impact the borrower class? Elaborate the concept and relationship using MISMO ontology. Only provide correct information
 
 Q: Based the mismo ontology, is there a limit to the number of borrowers for a loan?
+
+
+The Flood_Zone_Risk file gives numerical values for Flood risk factor. Use this to determine the Flood Risk Factor of 2000 Opportunity Way, Reston, VA 20190.

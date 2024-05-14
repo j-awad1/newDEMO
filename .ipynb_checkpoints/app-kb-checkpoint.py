@@ -29,7 +29,6 @@ with col1:
 
     add_vertical_space(2)
 
-    col1.header("Semantic ")
     tab1, tab2 = st.tabs(["Visual Ontology", "Parameters"])
 
     tab1.image("MISMOSubset.jpg", width = 950)

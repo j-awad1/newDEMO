@@ -4,13 +4,228 @@ Collecting usage statistics. To deactivate, set browser.gatherUsageStats to fals
 
   You can now view your Streamlit app in your browser.
 
-  Network URL: http://169.255.255.2:8502
-  External URL: http://35.170.135.114:8502
+  Network URL: http://169.255.254.1:8502
+  External URL: http://54.83.37.5:8502
 
-2024-05-12 14:43:44.284 Uncaught app exception
+2024-05-14 15:51:47.862 Uncaught app exception
 Traceback (most recent call last):
-  File "/opt/conda/lib/python3.10/site-packages/streamlit/runtime/scriptrunner/script_runner.py", line 600, in _run_script
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/scriptrunner/script_runner.py", line 600, in _run_script
     exec(code, module.__dict__)
-  File "/home/sagemaker-user/demo/newDEMO/app-kb.py", line 15, in <module>
-    col1, gap, col3 = st.columns([40, 30])
-ValueError: not enough values to unpack (expected 3, got 2)
+  File "/home/sagemaker-user/newDEMO/app-kb.py", line 4, in <module>
+    from streamlit_extras.add_vertical_space import add_vertical_space
+ModuleNotFoundError: No module named 'streamlit_extras'
+2024-05-14 18:54:09.789 Uncaught app exception
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/scriptrunner/script_runner.py", line 600, in _run_script
+    exec(code, module.__dict__)
+  File "/home/sagemaker-user/newDEMO/app-kb.py", line 197, in <module>
+    bedrock_response =br.get_bedrock_model_response(prompt, model_name)
+  File "/home/sagemaker-user/newDEMO/BedrockResponse.py", line 173, in get_bedrock_model_response
+    response = self.get_response_from_bedrock_model_mistral(prompt)
+  File "/home/sagemaker-user/newDEMO/BedrockResponse.py", line 116, in get_response_from_bedrock_model_mistral
+    "max_gen_len": max_gen_len,
+NameError: name 'max_gen_len' is not defined
+2024-05-14 18:55:33.656 Uncaught app exception
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/scriptrunner/script_runner.py", line 600, in _run_script
+    exec(code, module.__dict__)
+  File "/home/sagemaker-user/newDEMO/app-kb.py", line 197, in <module>
+    bedrock_response =br.get_bedrock_model_response(prompt, model_name)
+  File "/home/sagemaker-user/newDEMO/BedrockResponse.py", line 173, in get_bedrock_model_response
+    response = self.get_response_from_bedrock_model_mistral(prompt)
+  File "/home/sagemaker-user/newDEMO/BedrockResponse.py", line 116, in get_response_from_bedrock_model_mistral
+    "max_tokens": max_tokens,
+NameError: name 'max_tokens' is not defined
+2024-05-14 18:56:53.343 Uncaught app exception
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/scriptrunner/script_runner.py", line 600, in _run_script
+    exec(code, module.__dict__)
+  File "/home/sagemaker-user/newDEMO/app-kb.py", line 197, in <module>
+    bedrock_response =br.get_bedrock_model_response(prompt, model_name)
+  File "/home/sagemaker-user/newDEMO/BedrockResponse.py", line 173, in get_bedrock_model_response
+    response = self.get_response_from_bedrock_model_mistral(prompt)
+  File "/home/sagemaker-user/newDEMO/BedrockResponse.py", line 131, in get_response_from_bedrock_model_mistral
+    return(response_body.get("content")[0]['text'])
+TypeError: 'NoneType' object is not subscriptable
+2024-05-14 18:58:37.540 Uncaught app exception
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/scriptrunner/script_runner.py", line 600, in _run_script
+    exec(code, module.__dict__)
+  File "/home/sagemaker-user/newDEMO/app-kb.py", line 197, in <module>
+    bedrock_response =br.get_bedrock_model_response(prompt, model_name)
+  File "/home/sagemaker-user/newDEMO/BedrockResponse.py", line 173, in get_bedrock_model_response
+    response = self.get_response_from_bedrock_model_mistral(prompt)
+  File "/home/sagemaker-user/newDEMO/BedrockResponse.py", line 131, in get_response_from_bedrock_model_mistral
+    return(response_body.get("content")[0]['text'])
+TypeError: 'NoneType' object is not subscriptable
+2024-05-14 19:01:35.544 Uncaught app exception
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/scriptrunner/script_runner.py", line 600, in _run_script
+    exec(code, module.__dict__)
+  File "/home/sagemaker-user/newDEMO/app-kb.py", line 6, in <module>
+    from BedrockResponse import BedrockProcessing
+  File "/home/sagemaker-user/newDEMO/BedrockResponse.py", line 133
+    def get_response_from_bedrock_model_claude21(self,prompt):
+    ^
+SyntaxError: invalid syntax
+2024-05-14 19:02:14.404 Uncaught app exception
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/scriptrunner/script_runner.py", line 600, in _run_script
+    exec(code, module.__dict__)
+  File "/home/sagemaker-user/newDEMO/app-kb.py", line 197, in <module>
+    bedrock_response =br.get_bedrock_model_response(prompt, model_name)
+  File "/home/sagemaker-user/newDEMO/BedrockResponse.py", line 173, in get_bedrock_model_response
+    response = self.get_response_from_bedrock_model_mistral(prompt)
+  File "/home/sagemaker-user/newDEMO/BedrockResponse.py", line 131, in get_response_from_bedrock_model_mistral
+    return(response_body.get("output")[0]['text'])
+TypeError: 'NoneType' object is not subscriptable
+2024-05-14 19:03:08.883 Uncaught app exception
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/scriptrunner/script_runner.py", line 600, in _run_script
+    exec(code, module.__dict__)
+  File "/home/sagemaker-user/newDEMO/app-kb.py", line 225, in <module>
+    st.text_area(f"Q:", value =  chat["question"])
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/metrics_util.py", line 397, in wrapped_func
+    result = non_optional_func(*args, **kwargs)
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/elements/widgets/text_widgets.py", line 496, in text_area
+    return self._text_area(
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/elements/widgets/text_widgets.py", line 580, in _text_area
+    widget_state = register_widget(
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/state/widgets.py", line 164, in register_widget
+    return register_widget_from_metadata(metadata, ctx, widget_func_name, element_type)
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/state/widgets.py", line 209, in register_widget_from_metadata
+    raise DuplicateWidgetID(
+streamlit.errors.DuplicateWidgetID: There are multiple identical `st.text_area` widgets with the
+same generated key.
+
+When a widget is created, it's assigned an internal key based on
+its structure. Multiple widgets with an identical structure will
+result in the same internal key, which causes this error.
+
+To fix this error, please pass a unique `key` argument to
+`st.text_area`.
+2024-05-14 19:03:35.347 Uncaught app exception
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/scriptrunner/script_runner.py", line 600, in _run_script
+    exec(code, module.__dict__)
+  File "/home/sagemaker-user/newDEMO/app-kb.py", line 225, in <module>
+    st.text_area(f"Q:", value =  chat["question"])
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/metrics_util.py", line 397, in wrapped_func
+    result = non_optional_func(*args, **kwargs)
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/elements/widgets/text_widgets.py", line 496, in text_area
+    return self._text_area(
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/elements/widgets/text_widgets.py", line 580, in _text_area
+    widget_state = register_widget(
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/state/widgets.py", line 164, in register_widget
+    return register_widget_from_metadata(metadata, ctx, widget_func_name, element_type)
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/state/widgets.py", line 209, in register_widget_from_metadata
+    raise DuplicateWidgetID(
+streamlit.errors.DuplicateWidgetID: There are multiple identical `st.text_area` widgets with the
+same generated key.
+
+When a widget is created, it's assigned an internal key based on
+its structure. Multiple widgets with an identical structure will
+result in the same internal key, which causes this error.
+
+To fix this error, please pass a unique `key` argument to
+`st.text_area`.
+2024-05-14 19:03:48.064 Uncaught app exception
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/scriptrunner/script_runner.py", line 600, in _run_script
+    exec(code, module.__dict__)
+  File "/home/sagemaker-user/newDEMO/app-kb.py", line 225, in <module>
+    st.text_area(f"Q:", value =  chat["question"])
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/metrics_util.py", line 397, in wrapped_func
+    result = non_optional_func(*args, **kwargs)
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/elements/widgets/text_widgets.py", line 496, in text_area
+    return self._text_area(
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/elements/widgets/text_widgets.py", line 580, in _text_area
+    widget_state = register_widget(
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/state/widgets.py", line 164, in register_widget
+    return register_widget_from_metadata(metadata, ctx, widget_func_name, element_type)
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/state/widgets.py", line 209, in register_widget_from_metadata
+    raise DuplicateWidgetID(
+streamlit.errors.DuplicateWidgetID: There are multiple identical `st.text_area` widgets with the
+same generated key.
+
+When a widget is created, it's assigned an internal key based on
+its structure. Multiple widgets with an identical structure will
+result in the same internal key, which causes this error.
+
+To fix this error, please pass a unique `key` argument to
+`st.text_area`.
+2024-05-14 19:04:13.871 Uncaught app exception
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/scriptrunner/script_runner.py", line 600, in _run_script
+    exec(code, module.__dict__)
+  File "/home/sagemaker-user/newDEMO/app-kb.py", line 225, in <module>
+    st.text_area(f"Q:", value =  chat["question"])
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/metrics_util.py", line 397, in wrapped_func
+    result = non_optional_func(*args, **kwargs)
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/elements/widgets/text_widgets.py", line 496, in text_area
+    return self._text_area(
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/elements/widgets/text_widgets.py", line 580, in _text_area
+    widget_state = register_widget(
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/state/widgets.py", line 164, in register_widget
+    return register_widget_from_metadata(metadata, ctx, widget_func_name, element_type)
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/state/widgets.py", line 209, in register_widget_from_metadata
+    raise DuplicateWidgetID(
+streamlit.errors.DuplicateWidgetID: There are multiple identical `st.text_area` widgets with the
+same generated key.
+
+When a widget is created, it's assigned an internal key based on
+its structure. Multiple widgets with an identical structure will
+result in the same internal key, which causes this error.
+
+To fix this error, please pass a unique `key` argument to
+`st.text_area`.
+2024-05-14 19:04:32.768 Uncaught app exception
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/scriptrunner/script_runner.py", line 600, in _run_script
+    exec(code, module.__dict__)
+  File "/home/sagemaker-user/newDEMO/app-kb.py", line 225, in <module>
+    st.text_area(f"Q:", value =  chat["question"])
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/metrics_util.py", line 397, in wrapped_func
+    result = non_optional_func(*args, **kwargs)
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/elements/widgets/text_widgets.py", line 496, in text_area
+    return self._text_area(
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/elements/widgets/text_widgets.py", line 580, in _text_area
+    widget_state = register_widget(
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/state/widgets.py", line 164, in register_widget
+    return register_widget_from_metadata(metadata, ctx, widget_func_name, element_type)
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/state/widgets.py", line 209, in register_widget_from_metadata
+    raise DuplicateWidgetID(
+streamlit.errors.DuplicateWidgetID: There are multiple identical `st.text_area` widgets with the
+same generated key.
+
+When a widget is created, it's assigned an internal key based on
+its structure. Multiple widgets with an identical structure will
+result in the same internal key, which causes this error.
+
+To fix this error, please pass a unique `key` argument to
+`st.text_area`.
+2024-05-14 19:05:07.067 Uncaught app exception
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/scriptrunner/script_runner.py", line 600, in _run_script
+    exec(code, module.__dict__)
+  File "/home/sagemaker-user/newDEMO/app-kb.py", line 225, in <module>
+    st.text_area(f"Q:", value =  chat["question"])
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/metrics_util.py", line 397, in wrapped_func
+    result = non_optional_func(*args, **kwargs)
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/elements/widgets/text_widgets.py", line 496, in text_area
+    return self._text_area(
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/elements/widgets/text_widgets.py", line 580, in _text_area
+    widget_state = register_widget(
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/state/widgets.py", line 164, in register_widget
+    return register_widget_from_metadata(metadata, ctx, widget_func_name, element_type)
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/state/widgets.py", line 209, in register_widget_from_metadata
+    raise DuplicateWidgetID(
+streamlit.errors.DuplicateWidgetID: There are multiple identical `st.text_area` widgets with the
+same generated key.
+
+When a widget is created, it's assigned an internal key based on
+its structure. Multiple widgets with an identical structure will
+result in the same internal key, which causes this error.
+
+To fix this error, please pass a unique `key` argument to
+`st.text_area`.
