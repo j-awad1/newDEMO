@@ -128,63 +128,8 @@ with col3:
                 # submit_button = st.button("Submit", type="primary")
         
     
-            # if submit_button and user_input:
-            #     output = conversational_chat(user_input)
 
-# st.header("Bedrock Knowledgebase Semantic Search")
-
-# def display_local_image(image_path, max_width=None, caption=None):
-#     """Displays a local image on the Streamlit UI with customization options.
-
-#     Args:
-#         image_path (str): The path to the local image file.
-#         max_width (int, optional): The maximum width for the image. Defaults to None.
-#         caption (str, optional): A caption for the image. Defaults to None.
-#     """
-
-#     try:
-#         with open(image_path, 'rb') as f:
-#             image_data = f.read()
-#             st.image(image_data, caption=caption, width=max_width)
-#     except FileNotFoundError:
-#         st.error(f"Image not found: {image_path}")
-#     except Exception as e:
-#         st.error(f"An error occurred displaying the image: {e}")
-
-# # Choose the image path based on your environment
-# image_path = 'bedrock-example.jpg'  # Replace with the actual path
-
-# # Optional: Apply customization options
-# max_width = 300  # Set a maximum width
-# caption = "AWS Bedrock Architecture Pattern"  # Add a caption
-
-#display_local_image(image_path, max_width, caption) 
-
-
-
-
-#with st.chat_message("user"):
-#    st.write("Hello 👋")
-    
-#prompt = st.chat_input("Say something")
-#if prompt:
-#    st.write(f"User has sent the following prompt: {prompt}")
-
-    
-# Display a text box for input
-#col1, col2 = st.columns(2)
-
-# Input elements placed in separate columns
-#prompt = col1.text_input("Enter your query:", key="query")
-#model_name = col2.selectbox("Select Model:", ["","Llama2_13B", "Claude21"], key="Model")
-# prompt = st.text_input("Please enter your query", max_chars=2000)
-# model_name = st.selectbox("Select Model:", ["","Llama2_13B", "Claude21","Claude3-sonnet"], key="Model")
-# print(f"Model name selected = {model_name}")
 prompt = prompt.strip()
-
-#print(prompt)
-
-
 
 
 # Session State Management
