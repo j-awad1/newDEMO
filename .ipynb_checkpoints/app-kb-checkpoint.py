@@ -18,11 +18,11 @@ col1, col3 = st.columns([40, 30])
 with col1:
 
     # Build the icon + title
-    c1, mid, c2 = st.columns([1, 1, 30])
+    c1, c2 = st.columns([4, 30])
     with c1:
-        st.image("images.png", width = 60)
+        c1.image("images.png")
     with c2:
-        st.title("Enterprise Metadata Evolution")
+        c2.title("Enterprise Metadata Evolution")
 
     # Application description
     # st.write("View a wide range of data details and explore the depths of Fannie Mae data with AI powered super search technology!")
@@ -30,8 +30,9 @@ with col1:
     add_vertical_space(2)
 
     tab1, tab2 = st.tabs(["Visual Ontology", "Parameters"])
-
-    tab1.image("MISMOSubset.jpg", width = 950)
+    
+    
+    tab1.image("MISMOSubset.jpg")
     
     tab2.subheader("Tune Parameters")
     max_gen_len = tab2.slider("Maximum Length Generation:", min_value=0, max_value=4096, value=(2048))
@@ -90,11 +91,11 @@ with col1:
 
 # Chatbot Component
 with col3:
-    c3, c4 = st.columns([10, 30])
+    c3, c4 = st.columns([1, 7])
     with c3:
-        st.header("AI Chatbot")
+        c3.image("chatbot2.jpg")
     with c4:
-        st.image("chatbot_image.jpeg", width = 110)
+        c4.title("AI Chatbot")
     
     
     overall_container = st.container(border=True)

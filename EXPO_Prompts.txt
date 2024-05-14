@@ -4,6 +4,4 @@ Q: What are the flood zone risk factors from MISMO ontology? Does flood zone ris
 
 Q: Based the mismo ontology, is there a limit to the number of borrowers for a loan?
 
-Q: Determine the Flood Factor score and Flood Risk of 2000 Opportunity Way, Reston, VA 20190.
-
-Q: Determine the Flood Factor score and Flood Risk of 5420 Palmetto Street, Fort Myers Beach, FL 33931
+Q: Determine the Flood Factor score and Flood Risk of 5420 Palmetto Street, Fort Myers Beach, FL 33931.
