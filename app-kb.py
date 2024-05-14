@@ -109,8 +109,16 @@ with col3:
             
         with container:
             with st.form(key='my_form', clear_on_submit=True):
-                prompt = st.text_input("Please enter your query:", max_chars=2000)
+                user_input = st.text_input("Please enter your query:", max_chars=2000)
 
+                    
+                address_info = f"You are helpful chat assistant which answers based on the provided data. if the answer is not there in the context, please politely say that you can not answer the question. <context> Address|Flood Factor score|Flood Risk 1342 Middle Gulf drive, Sanibel, FL 33957|9|Extreme Risk, 5420 Palmetto Street, Fort Myers Beach, FL 33931|10|Extreme Risk, 0102 Steakhouse Road, Morganton, NC 28655|1|Minimal Risk, 2000 Opportunity Way, Reston, VA 20190|1|Minimal Risk, 5600 Granite Pkwy Plano, TX 750242|4|Moderate Risk </context>"
+                
+                if "Determine the Flood Factor score and Flood Risk" in user_input:
+                    prompt = f"{address_info} {user_input}"
+                    
+                else: 
+                    prompt = user_input
                 # user_input = st.text_input("Query:", placeholder="Ask questions here", key='input')
                 submit_button = st.form_submit_button(label="Submit", type="primary")
                 end_session_button = st.form_submit_button("End Session")
@@ -222,7 +230,7 @@ with response_container:
 
         # Creating columns for Question
         print (f"chat keys = {chat.keys()}")
-        st.text_area(f"Q:", value =  chat["question"])
+        st.text_area(f"Q:", value = user_input)
         st.text_area("Claude 3 Sonnet:", value=chat["answer"], height=150, key=str(chat)+"a")
 # Display conversation history
 st.write("## References")
